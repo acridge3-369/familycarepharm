@@ -13,8 +13,8 @@ const highlights = [
     label: 'About us',
     title: 'A pharmacy built on trust',
     text: 'Family-owned and community-focused for over 25 years. We know your name, your medications, and what matters to your health.',
-    image: 'https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1400&q=80',
-    alt: 'Pharmacist consulting with a patient',
+    image: '/images/band-about.jpg',
+    alt: 'Family Care Pharmacy team and storefront',
     tone: 'light',
   },
   {
@@ -22,8 +22,8 @@ const highlights = [
     label: 'Services',
     title: 'Care beyond the counter',
     text: 'Prescriptions, immunizations, compounding, delivery, and one-on-one consultations with licensed pharmacists.',
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2d5f2c6?auto=format&fit=crop&w=1400&q=80',
-    alt: 'Modern pharmacy interior',
+    image: '/images/band-services.jpg',
+    alt: 'Inside Family Care Pharmacy',
     tone: 'subtle',
   },
   {
@@ -31,8 +31,8 @@ const highlights = [
     label: 'Visit us',
     title: 'In your neighbourhood',
     text: `Find us at ${ADDRESS_FULL}. Extended hours, free parking, and a team ready to help.`,
-    image: 'https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=1400&q=80',
-    alt: 'Family at the pharmacy',
+    image: '/images/band-visit.jpg',
+    alt: 'Family Care Pharmacy in Langley',
     tone: 'soft',
   },
 ]
