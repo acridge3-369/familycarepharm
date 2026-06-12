@@ -5,22 +5,28 @@ const highlights = [
     to: '/about',
     label: 'About us',
     title: 'A pharmacy built on trust',
-    text: 'Family-owned and community-focused for over 25 years.',
-    image: 'https://images.unsplash.com/photo-1585435557343-3b5930310d87?auto=format&fit=crop&w=800&q=80',
+    text: 'Family-owned and community-focused for over 25 years. We know your name, your medications, and what matters to your health.',
+    image: 'https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1400&q=80',
+    alt: 'Pharmacist consulting with a patient',
+    tone: 'light',
   },
   {
     to: '/services',
     label: 'Services',
     title: 'Care beyond the counter',
-    text: 'Prescriptions, immunizations, delivery, and pharmacist consultations.',
-    image: 'https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=800&q=80',
+    text: 'Prescriptions, immunizations, compounding, delivery, and one-on-one consultations with licensed pharmacists.',
+    image: 'https://images.unsplash.com/photo-1631549916768-4119b2d5f2c6?auto=format&fit=crop&w=1400&q=80',
+    alt: 'Modern pharmacy interior',
+    tone: 'subtle',
   },
   {
     to: '/contact',
     label: 'Visit us',
-    title: 'We are in your neighbourhood',
-    text: 'Extended hours, free parking, and a team ready to help.',
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2d5f2c6?auto=format&fit=crop&w=800&q=80',
+    title: 'In your neighbourhood',
+    text: 'Extended hours, free parking, and a welcoming team ready to help — stop by or give us a call anytime.',
+    image: 'https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=1400&q=80',
+    alt: 'Family at the pharmacy',
+    tone: 'soft',
   },
 ]
 
@@ -29,11 +35,8 @@ function Home() {
     <>
       <section className="hero-section">
         <div
-          className="hero-image"
-          style={{
-            backgroundImage:
-              "url('https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1920&q=85')",
-          }}
+          className="hero-image hero-image--storefront"
+          style={{ backgroundImage: "url('/images/hero.jpg')" }}
         />
         <div className="hero-overlay" />
         <div className="hero-content">
@@ -58,23 +61,28 @@ function Home() {
         </div>
       </section>
 
-      <section className="home-cards-section">
-        <div className="section-inner">
-          <div className="home-cards">
-            {highlights.map((card) => (
-              <Link key={card.to} to={card.to} className="home-card">
-                <img src={card.image} alt="" className="home-card-image" />
-                <div className="home-card-body">
-                  <span className="section-label">{card.label}</span>
-                  <h2 className="home-card-title">{card.title}</h2>
-                  <p className="home-card-text">{card.text}</p>
-                  <span className="home-card-link">Learn more →</span>
-                </div>
-              </Link>
-            ))}
+      {highlights.map((item, index) => (
+        <section
+          key={item.to}
+          className={`home-band home-band--${item.tone}`}
+        >
+          <div className="home-band-inner">
+            <div className={`home-band-layout ${index % 2 === 1 ? 'reversed' : ''}`}>
+              <div className="home-band-media">
+                <img src={item.image} alt={item.alt} className="home-band-image" />
+              </div>
+              <div className="home-band-content">
+                <span className="section-label">{item.label}</span>
+                <h2 className="home-band-title">{item.title}</h2>
+                <p className="home-band-text">{item.text}</p>
+                <Link to={item.to} className="home-band-link">
+                  Learn more
+                </Link>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      ))}
     </>
   )
 }
