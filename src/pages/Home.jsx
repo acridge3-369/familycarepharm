@@ -52,7 +52,7 @@ function Home() {
             Personal pharmacy care for your whole family.
           </p>
           <div className="hero-actions">
-            <Link to="/refill-prescription" className="btn btn-primary">Refill a prescription</Link>
+            <Link to="/prescriptions" className="btn btn-primary">Prescriptions</Link>
             <a href={`tel:${PHONE_TEL}`} className="btn btn-secondary">{PHONE_DISPLAY}</a>
           </div>
         </div>

@@ -6,7 +6,7 @@ const navLinks = [
   { to: '/', label: 'Home', end: true },
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
-  { to: '/refill-prescription', label: 'Refill' },
+  { to: '/prescriptions', label: 'Prescriptions' },
   { to: '/contact', label: 'Contact' },
 ]
 

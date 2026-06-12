@@ -20,6 +20,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/prescriptions" element={<RefillPrescription />} />
           <Route path="/refill-prescription" element={<RefillPrescription />} />
         </Route>
       </Routes>

@@ -1,5 +1,6 @@
 export const PHONE_TEL = '+16045391611'
 export const PHONE_DISPLAY = '(604) 539-1611'
+export const PHARMACY_EMAIL = 'hello@familycarepharmacy.com'
 
 export const ADDRESS_LINE1 = '20020 84 Ave'
 export const ADDRESS_LINE2 = 'B-105'

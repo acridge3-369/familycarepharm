@@ -716,6 +716,275 @@ body {
   height: 420px;
 }
 
+/* Prescription upload form */
+.rx-page-inner {
+  max-width: 720px;
+}
+
+.rx-form {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.rx-form-section {
+  padding-bottom: 2.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.rx-form-section:last-of-type {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.rx-form-heading {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.rx-form-hint {
+  margin: 0 0 1.25rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.rx-photo-area {
+  margin-top: 0.5rem;
+}
+
+.rx-photo-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  min-height: 220px;
+  padding: 2rem 1.5rem;
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-subtle);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s, background 0.15s;
+}
+
+.rx-photo-upload:hover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.rx-photo-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.rx-photo-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  border: 2px solid var(--accent);
+  position: relative;
+}
+
+.rx-photo-icon::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1.1rem;
+  height: 0.85rem;
+  border: 2px solid var(--accent);
+  border-radius: 3px;
+  transform: translate(-50%, -45%);
+}
+
+.rx-photo-icon::after {
+  content: '';
+  position: absolute;
+  top: 0.55rem;
+  left: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  border-radius: 50%;
+  background: var(--accent);
+  transform: translateX(-50%);
+}
+
+.rx-photo-label {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.rx-photo-sublabel {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.rx-photo-preview-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rx-photo-preview {
+  width: 100%;
+  max-height: 420px;
+  object-fit: contain;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  background: var(--bg-subtle);
+}
+
+.rx-photo-clear {
+  align-self: flex-start;
+}
+
+.rx-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem 1.25rem;
+}
+
+.rx-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.rx-field--full {
+  grid-column: 1 / -1;
+}
+
+.rx-field input,
+.rx-field textarea {
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 400;
+  padding: 0.7rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--text);
+  transition: border-color 0.15s;
+}
+
+.rx-field input:focus,
+.rx-field textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.rx-field textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.rx-fieldset {
+  margin: 1.25rem 0 0;
+  padding: 0;
+  border: none;
+}
+
+.rx-fieldset legend {
+  padding: 0;
+  margin-bottom: 0.65rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.rx-radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+}
+
+.rx-radio {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-muted);
+  cursor: pointer;
+}
+
+.rx-radio input {
+  accent-color: var(--accent);
+}
+
+.rx-form-error {
+  margin: 0;
+  padding: 0.85rem 1rem;
+  font-size: 0.9rem;
+  color: #9b2c2c;
+  background: #fdf2f2;
+  border: 1px solid #f5c6c6;
+  border-radius: var(--radius);
+}
+
+.rx-submit-btn {
+  width: 100%;
+  padding: 0.95rem 1.25rem;
+  font-size: 1rem;
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.rx-submit-btn:hover:not(:disabled) {
+  background: #245a42;
+}
+
+.rx-submit-btn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+.rx-form-disclaimer {
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.rx-form-success {
+  padding: 2rem;
+  text-align: center;
+  background: var(--accent-soft);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.rx-form-success .prose {
+  margin-bottom: 1.5rem;
+}
+
+.refill-call-card--inline {
+  max-width: 520px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 2rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+
+.refill-call-card--inline .refill-phone-link {
+  margin: 1rem auto 0;
+}
+
 /* Refill prescription page */
 .refill-layout {
   display: grid;
@@ -1209,6 +1478,7 @@ body {
 @media (max-width: 900px) {
   .home-band-layout,
   .refill-layout,
+  .rx-form-grid,
   .values-grid,
   .split-layout,
   .gallery-grid,
@@ -1230,6 +1500,10 @@ body {
 
   .home-band-inner {
     padding: 3.5rem 1.25rem;
+  }
+
+  .rx-form-grid {
+    grid-template-columns: 1fr;
   }
 }
 
