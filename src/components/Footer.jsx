@@ -8,6 +8,7 @@ function Footer() {
         <nav className="footer-nav">
           <Link to="/about">About</Link>
           <Link to="/services">Services</Link>
+          <Link to="/refill-prescription">Refill</Link>
           <Link to="/contact">Contact</Link>
         </nav>
         <p className="footer-copy">&copy; {new Date().getFullYear()} Family Care Pharmacy</p>

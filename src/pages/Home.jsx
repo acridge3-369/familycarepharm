@@ -1,4 +1,11 @@
 import { Link } from 'react-router-dom'
+import {
+  ADDRESS_FULL,
+  MAP_EMBED_URL,
+  MAP_LINK,
+  PHONE_DISPLAY,
+  PHONE_TEL,
+} from '../constants/contact'
 
 const highlights = [
   {
@@ -23,7 +30,7 @@ const highlights = [
     to: '/contact',
     label: 'Visit us',
     title: 'In your neighbourhood',
-    text: 'Extended hours, free parking, and a welcoming team ready to help — stop by or give us a call anytime.',
+    text: `Find us at ${ADDRESS_FULL}. Extended hours, free parking, and a team ready to help.`,
     image: 'https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=1400&q=80',
     alt: 'Family at the pharmacy',
     tone: 'soft',
@@ -45,8 +52,8 @@ function Home() {
             Personal pharmacy care for your whole family.
           </p>
           <div className="hero-actions">
-            <Link to="/contact" className="btn btn-primary">Transfer a prescription</Link>
-            <a href="tel:+15551234567" className="btn btn-secondary">(555) 123-4567</a>
+            <Link to="/refill-prescription" className="btn btn-primary">Refill a prescription</Link>
+            <a href={`tel:${PHONE_TEL}`} className="btn btn-secondary">{PHONE_DISPLAY}</a>
           </div>
         </div>
       </section>
@@ -83,6 +90,36 @@ function Home() {
           </div>
         </section>
       ))}
+
+      <section className="home-location">
+        <div className="section-inner home-location-inner">
+          <div className="home-location-header">
+            <span className="section-label">Location</span>
+            <h2 className="section-title">Find us in Langley</h2>
+            <p className="section-lead">{ADDRESS_FULL}</p>
+            <a
+              href={MAP_LINK}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary home-location-btn"
+            >
+              Get directions
+            </a>
+          </div>
+          <div className="map-container home-map">
+            <iframe
+              title="Family Care Pharmacy — Langley, BC"
+              src={MAP_EMBED_URL}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+        </div>
+      </section>
     </>
   )
 }

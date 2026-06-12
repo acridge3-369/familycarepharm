@@ -1,10 +1,12 @@
 import { useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
+import { PHONE_DISPLAY, PHONE_TEL } from '../constants/contact'
 
 const navLinks = [
   { to: '/', label: 'Home', end: true },
   { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
+  { to: '/refill-prescription', label: 'Refill' },
   { to: '/contact', label: 'Contact' },
 ]
 
@@ -45,8 +47,8 @@ function Header() {
               </NavLink>
             ))}
           </div>
-          <a href="tel:+15551234567" className="header-phone">
-            (555) 123-4567
+          <a href={`tel:${PHONE_TEL}`} className="header-phone">
+            {PHONE_DISPLAY}
           </a>
         </nav>
       </div>
