@@ -3,7 +3,6 @@ import {
   ADDRESS_CITY,
   ADDRESS_FULL,
   ADDRESS_LINE1,
-  ADDRESS_LINE2,
   MAP_EMBED_URL,
   MAP_LINK,
   PHONE_DISPLAY,
@@ -37,8 +36,6 @@ function Contact() {
                 <p>
                   <a href={MAP_LINK} target="_blank" rel="noopener noreferrer">
                     {ADDRESS_LINE1}
-                    <br />
-                    {ADDRESS_LINE2}
                     <br />
                     {ADDRESS_CITY}
                   </a>
