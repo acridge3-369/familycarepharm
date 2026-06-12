@@ -4,7 +4,7 @@ Repository for **Family Care Pharmacy** software and related assets.
 
 ## Status
 
-This project is in early setup. The repository is initialized and connected to GitHub; application code and documentation will be added as development progresses.
+Family Care Pharmacy marketing site — React + Vite, Weatherhaven-inspired layout with hero image, services slideshow, community map, news, and FAQ.
 
 ## About
 
@@ -29,14 +29,24 @@ cd familycarepharm
 
 ### Run locally
 
-Steps will be documented here after the first runnable app or service is added (for example `npm install` / `npm run dev`, or equivalent).
+```bash
+npm install
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173).
 
 ## Project structure
 
 ```
 familycarepharm/
-├── README.md          # This file
-└── (source to come)   # Application code, tests, and config
+├── src/
+│   ├── pages/Home.jsx
+│   ├── components/Header.jsx, NewsModal.jsx
+│   └── App.css
+├── index.html
+├── package.json
+└── README.md
 ```
 
 ## Contributing
