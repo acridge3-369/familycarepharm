@@ -28,9 +28,19 @@ const services = [
     image: 'https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=900&q=80',
   },
   {
+    title: 'Vitamins & wellness',
+    text: 'A curated selection of vitamins, supplements, and wellness products — plus advice from our pharmacists on what fits your health goals.',
+    image: '/images/wellness-vitamins.jpg',
+  },
+  {
+    title: 'Body care & personal wash',
+    text: 'Soaps, body wash, skin care, and everyday personal care essentials for all ages, available right here in store.',
+    image: '/images/body-wash.jpg',
+  },
+  {
     title: 'Wellness & OTC advice',
     text: 'Guidance on over-the-counter products, blood pressure checks, smoking cessation support, and general health questions.',
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2d5f2c6?auto=format&fit=crop&w=900&q=80',
+    image: '/images/band-services.jpg',
   },
 ]
 

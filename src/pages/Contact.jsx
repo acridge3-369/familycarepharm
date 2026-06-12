@@ -100,6 +100,27 @@ function Contact() {
       <section className="page-content subtle">
         <div className="section-inner split-layout">
           <img
+            src="/images/parking-sign.jpg"
+            alt="Family Care Pharmacy parking sign"
+            className="content-image"
+          />
+          <div>
+            <span className="section-label">Parking</span>
+            <h2 className="section-title">Free parking for patients</h2>
+            <p className="prose">
+              Look for our parking sign when you arrive at {ADDRESS_FULL}. Free parking is
+              available for pharmacy patients — pull in and come straight to the counter.
+            </p>
+            <p className="prose">
+              Need directions? Use the map above or tap Get directions to open Google Maps.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="page-content">
+        <div className="section-inner split-layout">
+          <img
             src="https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=900&q=80"
             alt="Family at pharmacy"
             className="content-image"
