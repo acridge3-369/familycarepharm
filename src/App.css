@@ -7,7 +7,9 @@
   --text: #1c211f;
   --text-muted: #6b7570;
   --max-width: 1080px;
-  --header-height: 5.25rem;
+  --header-height: 6.25rem;
+  --brand-logo-size: 4rem;
+  --header-max-width: 1320px;
   --radius: 8px;
   --font: 'DM Sans', system-ui, -apple-system, sans-serif;
 }
@@ -49,38 +51,50 @@ body {
 }
 
 .header-inner {
-  max-width: calc(var(--max-width) + 4rem);
+  max-width: var(--header-max-width);
+  width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
-.logo {
+.brand {
   display: flex;
-  flex-direction: column;
-  gap: 0.1rem;
+  align-items: center;
+  gap: 1rem;
+  flex: 0 1 auto;
+  min-width: min(22rem, 42vw);
+  max-width: 50%;
   text-decoration: none;
-  line-height: 1.15;
+}
+
+.brand-logo-slot {
   flex-shrink: 0;
+  width: var(--brand-logo-size);
+  height: var(--brand-logo-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.logo-primary {
-  font-size: 1.2rem;
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.brand-name {
+  font-size: clamp(1.2rem, 2.6vw, 1.875rem);
   font-weight: 600;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.035em;
+  line-height: 1.05;
   color: var(--text);
-}
-
-.logo-secondary {
-  font-size: 0.8rem;
-  font-weight: 500;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--accent);
+  white-space: nowrap;
 }
 
 .nav {
@@ -92,7 +106,7 @@ body {
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 2.25rem;
+  gap: 1.75rem;
 }
 
 .nav-link {
@@ -1507,17 +1521,43 @@ body {
   }
 }
 
+@media (max-width: 900px) {
+  .nav-links {
+    gap: 1.25rem;
+  }
+
+  .nav-link {
+    font-size: 0.9rem;
+  }
+
+  .header-phone {
+    padding: 0.55rem 0.9rem;
+    font-size: 0.85rem;
+  }
+}
+
 @media (max-width: 768px) {
   :root {
-    --header-height: 4.5rem;
+    --header-height: 5rem;
+    --brand-logo-size: 3rem;
   }
 
   .header-inner {
     padding: 0 1.25rem;
+    gap: 1rem;
   }
 
-  .logo-primary {
-    font-size: 1.05rem;
+  .brand {
+    gap: 0.75rem;
+    min-width: 0;
+    max-width: none;
+    flex: 1;
+  }
+
+  .brand-name {
+    font-size: clamp(1rem, 4.2vw, 1.35rem);
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .menu-toggle {

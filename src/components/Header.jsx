@@ -12,13 +12,23 @@ const navLinks = [
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const [logoVisible, setLogoVisible] = useState(true)
 
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
-          <span className="logo-primary">Family Care</span>
-          <span className="logo-secondary">Pharmacy</span>
+        <Link to="/" className="brand" onClick={() => setMenuOpen(false)}>
+          <span className="brand-logo-slot">
+            {logoVisible && (
+              <img
+                src="/images/logo.png"
+                alt=""
+                className="brand-logo"
+                onError={() => setLogoVisible(false)}
+              />
+            )}
+          </span>
+          <span className="brand-name">Family Care Pharmacy</span>
         </Link>
 
         <button
