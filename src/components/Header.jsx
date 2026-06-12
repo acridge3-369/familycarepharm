@@ -15,7 +15,8 @@ function Header() {
     <header className="site-header">
       <div className="header-inner">
         <Link to="/" className="logo" onClick={() => setMenuOpen(false)}>
-          Family Care Pharmacy
+          <span className="logo-primary">Family Care</span>
+          <span className="logo-secondary">Pharmacy</span>
         </Link>
 
         <button
@@ -31,18 +32,20 @@ function Header() {
         </button>
 
         <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
-          {navLinks.map((link) => (
-            <NavLink
-              key={link.to}
-              to={link.to}
-              end={link.end}
-              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-              onClick={() => setMenuOpen(false)}
-            >
-              {link.label}
-            </NavLink>
-          ))}
-          <a href="tel:+15551234567" className="nav-cta">
+          <div className="nav-links">
+            {navLinks.map((link) => (
+              <NavLink
+                key={link.to}
+                to={link.to}
+                end={link.end}
+                className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+                onClick={() => setMenuOpen(false)}
+              >
+                {link.label}
+              </NavLink>
+            ))}
+          </div>
+          <a href="tel:+15551234567" className="header-phone">
             (555) 123-4567
           </a>
         </nav>
