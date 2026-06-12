@@ -19,20 +19,20 @@ const highlights = [
   },
   {
     to: '/services',
-    label: 'Wellness',
-    title: 'Vitamins & wellness',
-    text: 'Supplements, vitamins, and health products chosen to support your everyday wellbeing — with pharmacist guidance when you need it.',
-    image: '/images/wellness-vitamins.jpg',
-    alt: 'Vitamins and wellness products at Family Care Pharmacy',
+    label: 'Services',
+    title: 'Care beyond the counter',
+    text: 'Prescriptions, immunizations, compounding, delivery, and one-on-one consultations with licensed pharmacists.',
+    image: '/images/band-services.jpg',
+    alt: 'Inside Family Care Pharmacy',
     tone: 'subtle',
   },
   {
-    to: '/services',
-    label: 'Personal care',
-    title: 'Body care & essentials',
-    text: 'Soaps, body wash, skin care, and daily essentials for the whole family — all in one stop at your local pharmacy.',
-    image: '/images/body-wash.jpg',
-    alt: 'Body wash and personal care products',
+    to: '/contact',
+    label: 'Visit us',
+    title: 'In your neighbourhood',
+    text: `Find us at ${ADDRESS_FULL}. Extended hours, free parking, and a team ready to help.`,
+    image: '/images/band-visit.jpg',
+    alt: 'Family Care Pharmacy in Langley',
     tone: 'soft',
   },
 ]
@@ -96,10 +96,7 @@ function Home() {
           <div className="home-location-header">
             <span className="section-label">Location</span>
             <h2 className="section-title">Find us in Langley</h2>
-            <p className="section-lead">
-              {ADDRESS_FULL}. Free patient parking — see our{' '}
-              <Link to="/contact">contact page</Link> for details.
-            </p>
+            <p className="section-lead">{ADDRESS_FULL}</p>
             <a
               href={MAP_LINK}
               target="_blank"
