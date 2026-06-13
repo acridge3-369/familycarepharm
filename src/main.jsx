@@ -8,6 +8,7 @@ import About from './pages/About'
 import Services from './pages/Services'
 import Contact from './pages/Contact'
 import RefillPrescription from './pages/RefillPrescription'
+import CareHomes from './pages/CareHomes'
 import Walkthrough from './pages/Walkthrough'
 import './App.css'
 
@@ -20,6 +21,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/services" element={<Services />} />
+          <Route path="/care-homes" element={<CareHomes />} />
           <Route path="/walkthrough" element={<Walkthrough />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/prescriptions" element={<RefillPrescription />} />

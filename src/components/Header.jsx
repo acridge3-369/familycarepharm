@@ -4,10 +4,9 @@ import { PHONE_DISPLAY, PHONE_TEL } from '../constants/contact'
 
 const navLinks = [
   { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
   { to: '/services', label: 'Services' },
-  { to: '/walkthrough', label: 'Walkthrough' },
-  { to: '/prescriptions', label: 'Prescriptions' },
+  { to: '/care-homes', label: 'Care homes' },
+  { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]
 
@@ -45,6 +44,15 @@ function Header() {
         </button>
 
         <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
+          <NavLink
+            to="/prescriptions"
+            className={({ isActive }) =>
+              isActive ? 'header-prescriptions active' : 'header-prescriptions'
+            }
+            onClick={() => setMenuOpen(false)}
+          >
+            Prescriptions
+          </NavLink>
           <div className="nav-links">
             {navLinks.map((link) => (
               <NavLink

@@ -112,6 +112,25 @@ body {
   gap: 1.75rem;
 }
 
+.header-prescriptions {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  padding: 0.35rem 0;
+  transition: color 0.15s;
+}
+
+.header-prescriptions:hover {
+  color: var(--accent);
+}
+
+.header-prescriptions.active {
+  color: var(--accent);
+}
+
 .nav-link {
   position: relative;
   color: var(--text-muted);
@@ -601,6 +620,11 @@ body {
   color: var(--text);
 }
 
+.footer-nav-prescriptions {
+  font-weight: 700;
+  color: var(--text);
+}
+
 .footer-copy {
   margin: 0;
   font-size: 0.8rem;
@@ -615,18 +639,18 @@ body {
 
 .home-flow-lead {
   margin: 0 auto;
-  padding: clamp(4.5rem, 9vw, 7rem) clamp(1.5rem, 4vw, 2rem) clamp(4rem, 8vw, 6rem);
+  padding: clamp(2.25rem, 4vw, 3rem) clamp(1.5rem, 4vw, 2rem) clamp(2rem, 3.5vw, 2.75rem);
   max-width: 32rem;
   text-align: center;
   font-size: clamp(1.05rem, 2vw, 1.15rem);
   font-weight: 400;
   color: var(--text-muted);
-  line-height: 1.9;
+  line-height: 1.75;
   letter-spacing: 0.01em;
 }
 
 .home-panel {
-  padding: clamp(2rem, 5vw, 3.5rem) 0;
+  padding: clamp(1.25rem, 3vw, 2rem) 0;
 }
 
 .home-panel-inner {
@@ -1531,11 +1555,45 @@ body {
   gap: 4rem;
 }
 
+.services-menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 0 auto 3rem;
+  max-width: 52rem;
+}
+
+.services-menu-link {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--bg-warm);
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.services-menu-link:hover {
+  color: var(--text);
+  border-color: rgba(74, 107, 88, 0.35);
+}
+
+.services-menu-link.active {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
 .service-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 3rem;
   align-items: center;
+  scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
 .service-row.reversed .service-image {
@@ -1558,6 +1616,36 @@ body {
   margin: 0 0 0.75rem;
   font-size: 1.15rem;
   font-weight: 600;
+}
+
+.services-featured-heading {
+  margin-bottom: 2.5rem;
+}
+
+.services-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.services-cta-actions .btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.services-cta-actions .btn-primary:hover {
+  background: #3d5a49;
+}
+
+.services-cta-actions .btn-secondary {
+  color: var(--text);
+  border-color: var(--border);
+}
+
+.services-cta-actions .btn-secondary:hover {
+  border-color: var(--text-muted);
 }
 
 /* Page CTA */
