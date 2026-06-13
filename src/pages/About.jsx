@@ -1,5 +1,9 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
+
+const ABOUT_HERO_IMAGE = '/images/about-hero.jpg'
+const TEAM_IMAGE = '/images/team.jpg'
 
 const gallery = [
   {
@@ -39,37 +43,70 @@ const values = [
   },
 ]
 
+function TeamPhoto() {
+  const [loaded, setLoaded] = useState(true)
+
+  if (!loaded) {
+    return (
+      <div className="about-team-placeholder">
+        <p className="about-team-placeholder-title">Team photo</p>
+        <p className="about-team-placeholder-text">
+          Add your team image as <strong>public/images/team.jpg</strong>
+        </p>
+      </div>
+    )
+  }
+
+  return (
+    <img
+      src={TEAM_IMAGE}
+      alt="Family Care Pharmacy team"
+      className="about-team-image"
+      onError={() => setLoaded(false)}
+    />
+  )
+}
+
 function About() {
   return (
     <>
       <PageHero
+        large
         label="About"
         title="Your neighbourhood pharmacy"
         subtitle="Independent, family-focused, and here for the long haul."
-        image="https://images.unsplash.com/photo-1585435557343-3b5930310d87?auto=format&fit=crop&w=1920&q=85"
+        image={ABOUT_HERO_IMAGE}
+        imageHint="Add your hero image as public/images/about-hero.jpg"
       />
 
       <section className="page-content">
-        <div className="section-inner split-layout">
-          <div>
-            <h2 className="section-title">Our story</h2>
-            <p className="prose">
-              Family Care Pharmacy opened in 1999 with a simple idea: a pharmacy should feel
-              like part of the neighbourhood, not a chain checkout line. What started as a
-              single storefront has grown into a trusted health resource for thousands of
-              local families.
-            </p>
-            <p className="prose">
-              Today we are still independently owned. The same values that guided us on day
-              one — honesty, accessibility, and genuine care — shape every interaction at
-              our counter.
-            </p>
-          </div>
-          <img
-            src="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=900&q=80"
-            alt="Pharmacist consulting with a patient"
-            className="content-image"
-          />
+        <div className="section-inner about-story">
+          <h2 className="section-title">Our story</h2>
+          <p className="prose">
+            Family Care Pharmacy opened in 1999 with a simple idea: a pharmacy should feel
+            like part of the neighbourhood, not a chain checkout line. What started as a
+            single storefront has grown into a trusted health resource for thousands of
+            local families.
+          </p>
+          <p className="prose">
+            Today we are still independently owned. The same values that guided us on day
+            one — honesty, accessibility, and genuine care — shape every interaction at
+            our counter.
+          </p>
+        </div>
+      </section>
+
+      <section className="about-team">
+        <div className="section-inner about-team-intro">
+          <span className="section-label">Our team</span>
+          <h2 className="section-title">Meet the people behind the counter</h2>
+          <p className="prose">
+            Licensed pharmacists and staff who know your name, answer your questions,
+            and treat every visit like it matters — because it does.
+          </p>
+        </div>
+        <div className="about-team-photo">
+          <TeamPhoto />
         </div>
       </section>
 

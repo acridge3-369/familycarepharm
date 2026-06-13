@@ -1245,11 +1245,70 @@ body {
   overflow: hidden;
 }
 
+.page-hero--large {
+  min-height: clamp(52vh, 68vh, 78vh);
+  align-items: center;
+  padding: calc(var(--header-height) + 2rem) 1.5rem 4rem;
+}
+
+.page-hero--large .page-hero-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.62) 0%,
+    rgba(0, 0, 0, 0.28) 45%,
+    rgba(0, 0, 0, 0.12) 100%
+  );
+}
+
+.page-hero--large .page-hero-title {
+  font-size: clamp(2rem, 5vw, 3.1rem);
+}
+
+.page-hero--large .page-hero-subtitle {
+  font-size: clamp(1rem, 2vw, 1.12rem);
+  max-width: 34rem;
+}
+
 .page-hero-image {
   position: absolute;
   inset: 0;
   background-size: cover;
   background-position: center;
+  background-color: var(--bg-cream-deep);
+}
+
+.page-hero-image--empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-cream-deep);
+}
+
+.page-hero-upload-hint {
+  margin: 0;
+  padding: 0 1.5rem;
+  max-width: 22rem;
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.page-hero--empty .page-hero-overlay {
+  background: none;
+}
+
+.page-hero--empty .page-hero-content {
+  color: var(--text);
+}
+
+.page-hero--empty .section-label.light {
+  color: var(--accent);
+  opacity: 0.65;
+}
+
+.page-hero--empty .page-hero-subtitle {
+  color: var(--text-muted);
 }
 
 .page-hero-overlay {
@@ -1287,6 +1346,75 @@ body {
   max-width: 480px;
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.88);
+}
+
+/* About page */
+.about-story {
+  max-width: 40rem;
+}
+
+.about-story .section-title {
+  margin-bottom: 1.25rem;
+}
+
+.about-team {
+  background: var(--bg-cream);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  overflow-x: clip;
+}
+
+.about-team-intro {
+  padding-top: clamp(3.5rem, 7vw, 5rem);
+  padding-bottom: clamp(2rem, 4vw, 2.75rem);
+  max-width: 36rem;
+}
+
+.about-team-photo {
+  width: 100%;
+  min-height: clamp(320px, 45vw, 560px);
+  margin-bottom: clamp(3.5rem, 7vw, 5rem);
+}
+
+.about-team-image {
+  display: block;
+  width: 100%;
+  height: clamp(320px, 45vw, 560px);
+  object-fit: cover;
+  object-position: center top;
+}
+
+.about-team-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: clamp(320px, 45vw, 560px);
+  padding: 2rem;
+  text-align: center;
+  background: var(--bg-cream-deep);
+  border-top: 1px dashed rgba(229, 221, 210, 0.9);
+  border-bottom: 1px dashed rgba(229, 221, 210, 0.9);
+}
+
+.about-team-placeholder-title {
+  margin: 0 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.about-team-placeholder-text {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.about-team-placeholder-text strong {
+  font-weight: 500;
+  color: var(--text);
 }
 
 /* Page content */
@@ -1539,6 +1667,23 @@ body {
 
 .hours-table td {
   color: var(--text-muted);
+}
+
+.contact-after-hours {
+  margin: 1.25rem 0 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.contact-after-hours a {
+  color: var(--accent);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.contact-after-hours a:hover {
+  text-decoration: underline;
 }
 
 .map-note {

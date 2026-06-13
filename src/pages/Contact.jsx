@@ -5,8 +5,11 @@ import {
   ADDRESS_LINE1,
   MAP_EMBED_URL,
   MAP_LINK,
+  PHARMACY_EMAIL,
   PHONE_DISPLAY,
   PHONE_TEL,
+  AFTER_HOURS_PHONE_DISPLAY,
+  AFTER_HOURS_PHONE_TEL,
 } from '../constants/contact'
 
 const hours = [
@@ -46,8 +49,14 @@ function Contact() {
                 <p><a href={`tel:${PHONE_TEL}`}>{PHONE_DISPLAY}</a></p>
               </div>
               <div className="info-item">
+                <span className="info-label">After hours</span>
+                <p>
+                  <a href={`tel:${AFTER_HOURS_PHONE_TEL}`}>{AFTER_HOURS_PHONE_DISPLAY}</a>
+                </p>
+              </div>
+              <div className="info-item">
                 <span className="info-label">Email</span>
-                <p><a href="mailto:hello@familycarepharmacy.com">hello@familycarepharmacy.com</a></p>
+                <p><a href={`mailto:${PHARMACY_EMAIL}`}>{PHARMACY_EMAIL}</a></p>
               </div>
             </div>
 
@@ -62,6 +71,10 @@ function Contact() {
                 ))}
               </tbody>
             </table>
+            <p className="contact-after-hours">
+              Outside store hours, call{' '}
+              <a href={`tel:${AFTER_HOURS_PHONE_TEL}`}>{AFTER_HOURS_PHONE_DISPLAY}</a>.
+            </p>
 
             <div className="contact-actions" style={{ marginTop: '2rem' }}>
               <a href={`tel:${PHONE_TEL}`} className="btn btn-primary">Call now</a>

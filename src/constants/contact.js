@@ -1,6 +1,8 @@
 export const PHONE_TEL = '+16045391611'
 export const PHONE_DISPLAY = '(604) 539-1611'
-export const PHARMACY_EMAIL = 'hello@familycarepharmacy.com'
+export const AFTER_HOURS_PHONE_TEL = '+16048331641'
+export const AFTER_HOURS_PHONE_DISPLAY = '(604) 833-1641'
+export const PHARMACY_EMAIL = 'gcridge3@gmail.com'
 
 export const ADDRESS_LINE1 = '20020 84 Ave'
 export const ADDRESS_CITY = 'Langley, BC'
