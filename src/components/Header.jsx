@@ -1,24 +1,26 @@
 import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import { PHONE_DISPLAY, PHONE_TEL } from '../constants/contact'
+import { serviceMenuLinks } from '../constants/services'
 
 const navLinks = [
   { to: '/', label: 'Home', end: true },
   { to: '/about', label: 'About' },
-  { to: '/services', label: 'Services' },
-  { to: '/walkthrough', label: 'Walkthrough' },
-  { to: '/prescriptions', label: 'Prescriptions' },
   { to: '/contact', label: 'Contact' },
 ]
 
 function Header() {
   const [menuOpen, setMenuOpen] = useState(false)
   const [logoVisible, setLogoVisible] = useState(true)
+  const location = useLocation()
+  const servicesActive = location.pathname === '/services'
+
+  const closeMenu = () => setMenuOpen(false)
 
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link to="/" className="brand" onClick={() => setMenuOpen(false)}>
+        <Link to="/" className="brand" onClick={closeMenu}>
           <span className="brand-logo-slot">
             {logoVisible && (
               <img
@@ -45,14 +47,54 @@ function Header() {
         </button>
 
         <nav className={`nav ${menuOpen ? 'nav-open' : ''}`}>
+          <NavLink
+            to="/prescriptions"
+            className={({ isActive }) =>
+              isActive ? 'header-refills active' : 'header-refills'
+            }
+            onClick={closeMenu}
+          >
+            Request prescription refills
+          </NavLink>
           <div className="nav-links">
-            {navLinks.map((link) => (
+            <NavLink
+              to="/"
+              end
+              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+              onClick={closeMenu}
+            >
+              Home
+            </NavLink>
+
+            <div className="nav-dropdown">
+              <NavLink
+                to="/services"
+                className={servicesActive ? 'nav-link nav-link--dropdown active' : 'nav-link nav-link--dropdown'}
+                onClick={closeMenu}
+              >
+                Services
+              </NavLink>
+              <div className="nav-dropdown-menu" role="menu">
+                {serviceMenuLinks.map((item) => (
+                  <a
+                    key={item.to}
+                    href={item.to}
+                    className="nav-dropdown-item"
+                    role="menuitem"
+                    onClick={closeMenu}
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
+            </div>
+
+            {navLinks.slice(1).map((link) => (
               <NavLink
                 key={link.to}
                 to={link.to}
-                end={link.end}
                 className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
-                onClick={() => setMenuOpen(false)}
+                onClick={closeMenu}
               >
                 {link.label}
               </NavLink>
