@@ -6,10 +6,10 @@ function Footer() {
       <div className="footer-inner">
         <p className="footer-brand">Family Care Pharmacy</p>
         <nav className="footer-nav">
-          <Link to="/prescriptions" className="footer-nav-prescriptions">Prescriptions</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/care-homes">Care homes</Link>
           <Link to="/about">About</Link>
+          <Link to="/services">Services</Link>
+          <Link to="/walkthrough">Walkthrough</Link>
+          <Link to="/prescriptions">Prescriptions</Link>
           <Link to="/contact">Contact</Link>
         </nav>
         <p className="footer-copy">&copy; {new Date().getFullYear()} Family Care Pharmacy</p>
