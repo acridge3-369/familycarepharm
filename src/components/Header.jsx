@@ -89,6 +89,14 @@ function Header() {
               </div>
             </div>
 
+            <NavLink
+              to="/walkthrough"
+              className={({ isActive }) => (isActive ? 'nav-link active' : 'nav-link')}
+              onClick={closeMenu}
+            >
+              Walkthrough
+            </NavLink>
+
             {navLinks.slice(1).map((link) => (
               <NavLink
                 key={link.to}
