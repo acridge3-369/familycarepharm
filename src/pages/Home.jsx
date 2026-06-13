@@ -56,62 +56,67 @@ function Home() {
       </section>
 
       <section className="home-flow">
-        <div className="home-flow-wrap">
-          <p className="home-flow-lead">
-            We are an independent pharmacy dedicated to making healthcare simple, personal,
-            and accessible — whether you are picking up a refill, getting a flu shot, or
-            speaking with a pharmacist about your medications.
-          </p>
+        <p className="home-flow-lead">
+          We are an independent pharmacy dedicated to making healthcare simple, personal,
+          and accessible — whether you are picking up a refill, getting a flu shot, or
+          speaking with a pharmacist about your medications.
+        </p>
 
-          <div className="home-flow-list">
-            {highlights.map((item, index) => (
-              <article
-                key={item.to}
-                className={`home-flow-item ${index % 2 === 1 ? 'home-flow-item--flip' : ''}`}
+        {highlights.map((item, index) => (
+          <article
+            key={item.to}
+            className={`home-panel ${index % 2 === 1 ? 'home-panel--reverse' : ''}`}
+          >
+            <div className="home-panel-inner">
+              <div className="home-panel-media">
+                <img
+                  src={item.image}
+                  alt={item.alt}
+                  className="home-panel-image"
+                  loading="lazy"
+                />
+              </div>
+              <div className="home-panel-content">
+                <span className="home-flow-label">{item.label}</span>
+                <h2 className="home-flow-title">{item.title}</h2>
+                <p className="home-flow-text">{item.text}</p>
+                <Link to={item.to} className="home-flow-link">
+                  Learn more <span aria-hidden="true">→</span>
+                </Link>
+              </div>
+            </div>
+          </article>
+        ))}
+
+        <article className="home-panel home-panel--reverse home-panel--location">
+          <div className="home-panel-inner">
+            <div className="home-panel-media home-panel-media--map">
+              <iframe
+                title="Family Care Pharmacy — Langley, BC"
+                src={MAP_EMBED_URL}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
+            </div>
+            <div className="home-panel-content">
+              <span className="home-flow-label">Location</span>
+              <h2 className="home-flow-title">Find us in Langley</h2>
+              <p className="home-flow-text">{ADDRESS_FULL}</p>
+              <a
+                href={MAP_LINK}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-flow-link home-flow-link--accent"
               >
-                <div className="home-flow-visual">
-                  <img src={item.image} alt={item.alt} className="home-flow-image" loading="lazy" />
-                </div>
-                <div className="home-flow-copy">
-                  <span className="home-flow-label">{item.label}</span>
-                  <h2 className="home-flow-title">{item.title}</h2>
-                  <p className="home-flow-text">{item.text}</p>
-                  <Link to={item.to} className="home-flow-link">
-                    Learn more <span aria-hidden="true">→</span>
-                  </Link>
-                </div>
-              </article>
-            ))}
+                Get directions <span aria-hidden="true">→</span>
+              </a>
+            </div>
           </div>
-        </div>
-
-        <div className="home-flow-location">
-          <div className="home-flow-location-copy">
-            <span className="home-flow-label">Location</span>
-            <h2 className="home-flow-title">Find us in Langley</h2>
-            <p className="home-flow-text">{ADDRESS_FULL}</p>
-            <a
-              href={MAP_LINK}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-flow-link home-flow-link--accent"
-            >
-              Get directions <span aria-hidden="true">→</span>
-            </a>
-          </div>
-          <div className="home-flow-map">
-            <iframe
-              title="Family Care Pharmacy — Langley, BC"
-              src={MAP_EMBED_URL}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-        </div>
+        </article>
       </section>
     </>
   )
