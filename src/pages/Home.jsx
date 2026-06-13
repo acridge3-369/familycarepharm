@@ -89,25 +89,11 @@ function Home() {
         ))}
 
         <article className="home-location">
-          <div className="home-location-map">
-            <iframe
-              title="Family Care Pharmacy — Langley, BC"
-              src={MAP_EMBED_URL}
-              width="100%"
-              height="100%"
-              style={{ border: 0 }}
-              allowFullScreen
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-            />
-          </div>
-          <div className="home-location-bar">
-            <div className="home-location-inner">
-              <div className="home-location-copy">
-                <span className="home-flow-label">Location</span>
-                <h2 className="home-flow-title">Find us in Langley</h2>
-                <p className="home-flow-text">{ADDRESS_FULL}</p>
-              </div>
+          <div className="home-location-card">
+            <div className="home-location-copy">
+              <span className="home-flow-label">Location</span>
+              <h2 className="home-flow-title">Find us in Langley</h2>
+              <p className="home-flow-text">{ADDRESS_FULL}</p>
               <a
                 href={MAP_LINK}
                 target="_blank"
@@ -116,6 +102,18 @@ function Home() {
               >
                 Get directions <span aria-hidden="true">→</span>
               </a>
+            </div>
+            <div className="home-location-map">
+              <iframe
+                title="Family Care Pharmacy — Langley, BC"
+                src={MAP_EMBED_URL}
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </article>
