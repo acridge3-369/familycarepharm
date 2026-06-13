@@ -88,24 +88,26 @@ function Home() {
           </article>
         ))}
 
-        <article className="home-panel home-panel--reverse home-panel--location">
-          <div className="home-panel-inner">
-            <div className="home-panel-media home-panel-media--map">
-              <iframe
-                title="Family Care Pharmacy — Langley, BC"
-                src={MAP_EMBED_URL}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
-            <div className="home-panel-content">
-              <span className="home-flow-label">Location</span>
-              <h2 className="home-flow-title">Find us in Langley</h2>
-              <p className="home-flow-text">{ADDRESS_FULL}</p>
+        <article className="home-location">
+          <div className="home-location-map">
+            <iframe
+              title="Family Care Pharmacy — Langley, BC"
+              src={MAP_EMBED_URL}
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
+          </div>
+          <div className="home-location-bar">
+            <div className="home-location-inner">
+              <div className="home-location-copy">
+                <span className="home-flow-label">Location</span>
+                <h2 className="home-flow-title">Find us in Langley</h2>
+                <p className="home-flow-text">{ADDRESS_FULL}</p>
+              </div>
               <a
                 href={MAP_LINK}
                 target="_blank"

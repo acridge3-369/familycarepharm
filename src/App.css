@@ -724,22 +724,50 @@ body {
   transform: translateX(4px);
 }
 
-.home-panel--location {
-  padding-top: clamp(3rem, 6vw, 5rem);
-  padding-bottom: clamp(4rem, 9vw, 7rem);
+.home-location {
   border-top: 1px solid rgba(229, 221, 210, 0.6);
 }
 
-.home-panel-media--map {
-  height: clamp(260px, 34vw, 400px);
+.home-location-map {
+  width: 100%;
+  height: clamp(300px, 42vw, 520px);
   background: var(--bg-cream-deep);
 }
 
-.home-panel-media--map iframe {
+.home-location-map iframe {
   display: block;
   width: 100%;
   height: 100%;
   filter: saturate(0.88) sepia(0.08);
+}
+
+.home-location-bar {
+  width: 100%;
+  background: var(--bg-warm);
+  border-top: 1px solid rgba(229, 221, 210, 0.6);
+}
+
+.home-location-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  padding: clamp(2.25rem, 5vw, 3.5rem) clamp(1.5rem, 5vw, 4rem);
+}
+
+.home-location-copy {
+  flex: 1;
+  min-width: 0;
+}
+
+.home-location-copy .home-flow-title {
+  margin-bottom: 0.5rem;
+}
+
+.home-location-inner .home-flow-link {
+  flex-shrink: 0;
+  margin-top: 0;
+  font-size: 0.95rem;
 }
 
 /* Pharmacy walkthrough */
@@ -1616,6 +1644,15 @@ body {
     max-width: none;
     margin: 0;
     padding: 0 1.5rem 1rem;
+  }
+
+  .home-location-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .home-location-inner .home-flow-link {
+    margin-top: 0.5rem;
   }
 
   .refill-layout,
