@@ -17,22 +17,31 @@ function Header() {
 
   const closeMenu = () => setMenuOpen(false)
 
+  const refillsClass = ({ isActive }) =>
+    isActive ? 'header-refills-btn active' : 'header-refills-btn'
+
   return (
     <header className="site-header">
       <div className="header-inner">
-        <Link to="/" className="brand" onClick={closeMenu}>
-          <span className="brand-logo-slot">
-            {logoVisible && (
-              <img
-                src="/images/logo.png"
-                alt=""
-                className="brand-logo"
-                onError={() => setLogoVisible(false)}
-              />
-            )}
-          </span>
-          <span className="brand-name">Family Care Pharmacy</span>
-        </Link>
+        <div className="header-start">
+          <Link to="/" className="brand" onClick={closeMenu}>
+            <span className="brand-logo-slot">
+              {logoVisible && (
+                <img
+                  src="/images/logo.png"
+                  alt=""
+                  className="brand-logo"
+                  onError={() => setLogoVisible(false)}
+                />
+              )}
+            </span>
+            <span className="brand-name">Family Care Pharmacy</span>
+          </Link>
+
+          <NavLink to="/prescriptions" className={refillsClass} onClick={closeMenu}>
+            Request prescription refills
+          </NavLink>
+        </div>
 
         <button
           type="button"
@@ -50,7 +59,7 @@ function Header() {
           <NavLink
             to="/prescriptions"
             className={({ isActive }) =>
-              isActive ? 'header-refills active' : 'header-refills'
+              isActive ? 'header-refills-btn header-refills-btn--menu active' : 'header-refills-btn header-refills-btn--menu'
             }
             onClick={closeMenu}
           >

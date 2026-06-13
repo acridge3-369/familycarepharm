@@ -59,20 +59,28 @@ body {
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 0 2.5rem;
+  padding: 0 2rem 0 1.15rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2.5rem;
+  gap: 1.5rem;
+}
+
+.header-start {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.85rem, 2vw, 1.35rem);
+  flex: 0 1 auto;
+  min-width: 0;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.85rem;
   flex: 0 1 auto;
-  min-width: min(22rem, 42vw);
-  max-width: 50%;
+  min-width: 0;
+  max-width: none;
   text-decoration: none;
 }
 
@@ -104,7 +112,39 @@ body {
 .nav {
   display: flex;
   align-items: center;
-  gap: 2.5rem;
+  gap: 2rem;
+  flex: 1;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+.header-refills-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.62rem 1.05rem;
+  border-radius: 999px;
+  background: var(--text);
+  color: #fff;
+  font-size: clamp(0.72rem, 1.15vw, 0.84rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.2;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.header-refills-btn:hover {
+  background: var(--accent);
+}
+
+.header-refills-btn.active {
+  background: var(--accent);
+}
+
+.header-refills-btn--menu {
+  display: none;
 }
 
 .nav-links {
@@ -146,25 +186,6 @@ body {
 
 .nav-link.active::after {
   transform: scaleX(1);
-}
-
-.header-refills {
-  color: var(--text);
-  text-decoration: none;
-  font-size: clamp(0.82rem, 1.4vw, 0.95rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  padding: 0.35rem 0;
-  transition: color 0.15s;
-}
-
-.header-refills:hover {
-  color: var(--accent);
-}
-
-.header-refills.active {
-  color: var(--accent);
 }
 
 .nav-dropdown {
@@ -2012,10 +2033,18 @@ body {
     padding: 0.65rem 0;
   }
 
-  .header-refills {
-    font-size: 1rem;
+  .header-start .header-refills-btn {
+    display: none;
+  }
+
+  .header-refills-btn--menu {
+    display: flex;
+    width: 100%;
+    justify-content: center;
     white-space: normal;
-    line-height: 1.3;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    font-size: 0.92rem;
   }
 
   .nav-dropdown-menu {
