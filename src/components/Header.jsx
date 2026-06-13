@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { NavLink, useLocation } from 'react-router-dom'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { PHONE_DISPLAY, PHONE_TEL } from '../constants/contact'
 import { serviceMenuLinks } from '../constants/services'
 
