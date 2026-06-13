@@ -19,22 +19,21 @@ function PageHero({ label, title, subtitle, image, large = false, imageHint }) {
     <section
       className={`page-hero ${large ? 'page-hero--large' : ''} ${!imageOk ? 'page-hero--empty' : ''}`}
     >
-      {imageOk && (
-        <>
-          <div
-            className="page-hero-image"
-            style={{ backgroundImage: `url('${image}')` }}
-          />
-          <div className="page-hero-overlay" />
-        </>
+      {imageOk ? (
+        <div
+          className="page-hero-image"
+          style={{ backgroundImage: `url('${image}')` }}
+        />
+      ) : (
+        <div className="page-hero-image page-hero-image--empty">
+          {imageHint && <p className="page-hero-upload-hint">{imageHint}</p>}
+        </div>
       )}
+      <div className="page-hero-overlay" />
       <div className="page-hero-content">
         {label && <span className="section-label light">{label}</span>}
         <h1 className="page-hero-title">{title}</h1>
         {subtitle && <p className="page-hero-subtitle">{subtitle}</p>}
-        {!imageOk && imageHint && (
-          <p className="page-hero-upload-note">{imageHint}</p>
-        )}
       </div>
     </section>
   )

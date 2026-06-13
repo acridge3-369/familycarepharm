@@ -49,8 +49,9 @@ function TeamPhoto() {
   if (!loaded) {
     return (
       <div className="about-team-placeholder">
+        <p className="about-team-placeholder-title">Team photo</p>
         <p className="about-team-placeholder-text">
-          Team photo — add <strong>public/images/team.jpg</strong>
+          Add your team image as <strong>public/images/team.jpg</strong>
         </p>
       </div>
     )
@@ -96,20 +97,16 @@ function About() {
       </section>
 
       <section className="about-team">
-        <div className="section-inner">
-          <div className="about-team-card">
-            <div className="about-team-copy">
-              <span className="section-label">Our team</span>
-              <h2 className="section-title">Meet the people behind the counter</h2>
-              <p className="prose">
-                Licensed pharmacists and staff who know your name, answer your questions,
-                and treat every visit like it matters — because it does.
-              </p>
-            </div>
-            <div className="about-team-media">
-              <TeamPhoto />
-            </div>
-          </div>
+        <div className="section-inner about-team-intro">
+          <span className="section-label">Our team</span>
+          <h2 className="section-title">Meet the people behind the counter</h2>
+          <p className="prose">
+            Licensed pharmacists and staff who know your name, answer your questions,
+            and treat every visit like it matters — because it does.
+          </p>
+        </div>
+        <div className="about-team-photo">
+          <TeamPhoto />
         </div>
       </section>
 
