@@ -15,7 +15,6 @@ const highlights = [
     text: 'Family-owned and community-focused for over 25 years. We know your name, your medications, and what matters to your health.',
     image: '/images/band-about.jpg',
     alt: 'Family Care Pharmacy team and storefront',
-    tone: 'light',
   },
   {
     to: '/services',
@@ -24,16 +23,14 @@ const highlights = [
     text: 'Prescriptions, immunizations, compounding, delivery, and one-on-one consultations with licensed pharmacists.',
     image: '/images/band-services.jpg',
     alt: 'Inside Family Care Pharmacy',
-    tone: 'subtle',
   },
   {
     to: '/contact',
     label: 'Visit us',
     title: 'In your neighbourhood',
-    text: `Find us at ${ADDRESS_FULL}. Extended hours, free parking, and a team ready to help.`,
+    text: `Find us at ${ADDRESS_FULL}. Free parking and a team ready to help when you walk in.`,
     image: '/images/band-visit.jpg',
     alt: 'Family Care Pharmacy in Langley',
-    tone: 'soft',
   },
 ]
 
@@ -58,55 +55,51 @@ function Home() {
         </div>
       </section>
 
-      <section className="home-intro">
-        <div className="section-inner home-intro-inner">
-          <p className="home-intro-text">
+      <section className="home-flow">
+        <div className="home-flow-wrap">
+          <p className="home-flow-lead">
             We are an independent pharmacy dedicated to making healthcare simple, personal,
             and accessible — whether you are picking up a refill, getting a flu shot, or
             speaking with a pharmacist about your medications.
           </p>
-        </div>
-      </section>
 
-      {highlights.map((item, index) => (
-        <section
-          key={item.to}
-          className={`home-band home-band--${item.tone}`}
-        >
-          <div className="home-band-inner">
-            <div className={`home-band-layout ${index % 2 === 1 ? 'reversed' : ''}`}>
-              <div className="home-band-media">
-                <img src={item.image} alt={item.alt} className="home-band-image" />
-              </div>
-              <div className="home-band-content">
-                <span className="section-label">{item.label}</span>
-                <h2 className="home-band-title">{item.title}</h2>
-                <p className="home-band-text">{item.text}</p>
-                <Link to={item.to} className="home-band-link">
-                  Learn more
-                </Link>
-              </div>
-            </div>
+          <div className="home-flow-list">
+            {highlights.map((item, index) => (
+              <article
+                key={item.to}
+                className={`home-flow-item ${index % 2 === 1 ? 'home-flow-item--flip' : ''}`}
+              >
+                <div className="home-flow-visual">
+                  <img src={item.image} alt={item.alt} className="home-flow-image" loading="lazy" />
+                </div>
+                <div className="home-flow-copy">
+                  <span className="home-flow-label">{item.label}</span>
+                  <h2 className="home-flow-title">{item.title}</h2>
+                  <p className="home-flow-text">{item.text}</p>
+                  <Link to={item.to} className="home-flow-link">
+                    Learn more <span aria-hidden="true">→</span>
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
-        </section>
-      ))}
+        </div>
 
-      <section className="home-location">
-        <div className="section-inner home-location-inner">
-          <div className="home-location-header">
-            <span className="section-label">Location</span>
-            <h2 className="section-title">Find us in Langley</h2>
-            <p className="section-lead">{ADDRESS_FULL}</p>
+        <div className="home-flow-location">
+          <div className="home-flow-location-copy">
+            <span className="home-flow-label">Location</span>
+            <h2 className="home-flow-title">Find us in Langley</h2>
+            <p className="home-flow-text">{ADDRESS_FULL}</p>
             <a
               href={MAP_LINK}
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-primary home-location-btn"
+              className="home-flow-link home-flow-link--accent"
             >
-              Get directions
+              Get directions <span aria-hidden="true">→</span>
             </a>
           </div>
-          <div className="map-container home-map">
+          <div className="home-flow-map">
             <iframe
               title="Family Care Pharmacy — Langley, BC"
               src={MAP_EMBED_URL}
