@@ -38,7 +38,7 @@ function Header() {
           </Link>
 
           <NavLink to="/prescriptions" className={refillsClass} onClick={closeMenu}>
-            Request prescription refills
+            Fill my prescriptions
           </NavLink>
         </div>
 
@@ -62,7 +62,7 @@ function Header() {
             }
             onClick={closeMenu}
           >
-            Request prescription refills
+            Fill my prescriptions
           </NavLink>
           <div className="nav-links">
             <NavLink

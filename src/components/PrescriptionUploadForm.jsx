@@ -4,17 +4,7 @@ import { PHARMACY_EMAIL } from '../constants/contact'
 const initialForm = {
   firstName: '',
   lastName: '',
-  dateOfBirth: '',
   phone: '',
-  email: '',
-  phn: '',
-  medicationName: '',
-  rxNumber: '',
-  doctorName: '',
-  allergies: '',
-  prescriptionType: 'refill',
-  fulfillment: 'pickup',
-  notes: '',
 }
 
 function PrescriptionUploadForm() {
@@ -80,18 +70,8 @@ function PrescriptionUploadForm() {
     payload.append('prescription_photo', photo, photo.name)
     payload.append('first_name', form.firstName)
     payload.append('last_name', form.lastName)
-    payload.append('date_of_birth', form.dateOfBirth)
     payload.append('phone', form.phone)
-    payload.append('email', form.email)
-    payload.append('phn', form.phn)
-    payload.append('medication_name', form.medicationName)
-    payload.append('rx_number', form.rxNumber)
-    payload.append('doctor_name', form.doctorName)
-    payload.append('allergies', form.allergies)
-    payload.append('prescription_type', form.prescriptionType)
-    payload.append('fulfillment', form.fulfillment)
-    payload.append('notes', form.notes)
-    payload.append('_subject', `Prescription submission — ${form.firstName} ${form.lastName}`)
+    payload.append('_subject', `Fill my prescriptions — ${form.firstName} ${form.lastName}`)
     payload.append('_captcha', 'false')
     payload.append('_template', 'table')
 
@@ -122,8 +102,8 @@ function PrescriptionUploadForm() {
       <div className="rx-form-success">
         <h2 className="section-title">Prescription sent</h2>
         <p className="prose">
-          Thank you. Our pharmacy team has received your prescription photo and details.
-          We will contact you when your order is ready or if we need anything else.
+          Thank you. Our pharmacy team has received your photo. We will call you when
+          your order is ready or if we need anything else.
         </p>
         <button
           type="button"
@@ -139,10 +119,10 @@ function PrescriptionUploadForm() {
   return (
     <form className="rx-form" onSubmit={handleSubmit}>
       <div className="rx-form-section">
-        <span className="section-label">Step 1</span>
         <h2 className="rx-form-heading">Photo of your prescription</h2>
         <p className="rx-form-hint">
-          On your phone, tap below to open the camera. Make sure the label and Rx details are clear.
+          Take a clear photo of your prescription label, then add your name and phone
+          so we can reach you.
         </p>
 
         <div className="rx-photo-area">
@@ -171,9 +151,6 @@ function PrescriptionUploadForm() {
       </div>
 
       <div className="rx-form-section">
-        <span className="section-label">Step 2</span>
-        <h2 className="rx-form-heading">Your information</h2>
-
         <div className="rx-form-grid">
           <label className="rx-field">
             <span>First name *</span>
@@ -197,17 +174,7 @@ function PrescriptionUploadForm() {
               autoComplete="family-name"
             />
           </label>
-          <label className="rx-field">
-            <span>Date of birth *</span>
-            <input
-              type="date"
-              name="dateOfBirth"
-              value={form.dateOfBirth}
-              onChange={updateField}
-              required
-            />
-          </label>
-          <label className="rx-field">
+          <label className="rx-field rx-field--full">
             <span>Phone *</span>
             <input
               type="tel"
@@ -219,148 +186,7 @@ function PrescriptionUploadForm() {
               placeholder="(604) 555-1234"
             />
           </label>
-          <label className="rx-field">
-            <span>Email</span>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={updateField}
-              autoComplete="email"
-            />
-          </label>
-          <label className="rx-field">
-            <span>Personal Health Number (PHN)</span>
-            <input
-              type="text"
-              name="phn"
-              value={form.phn}
-              onChange={updateField}
-              inputMode="numeric"
-              placeholder="BC health card number"
-            />
-          </label>
         </div>
-      </div>
-
-      <div className="rx-form-section">
-        <span className="section-label">Step 3</span>
-        <h2 className="rx-form-heading">Prescription details</h2>
-
-        <div className="rx-form-grid">
-          <label className="rx-field rx-field--full">
-            <span>Medication name *</span>
-            <input
-              type="text"
-              name="medicationName"
-              value={form.medicationName}
-              onChange={updateField}
-              required
-              placeholder="As shown on the prescription label"
-            />
-          </label>
-          <label className="rx-field">
-            <span>Rx / prescription number</span>
-            <input
-              type="text"
-              name="rxNumber"
-              value={form.rxNumber}
-              onChange={updateField}
-            />
-          </label>
-          <label className="rx-field">
-            <span>Prescribing doctor</span>
-            <input
-              type="text"
-              name="doctorName"
-              value={form.doctorName}
-              onChange={updateField}
-            />
-          </label>
-          <label className="rx-field rx-field--full">
-            <span>Allergies</span>
-            <input
-              type="text"
-              name="allergies"
-              value={form.allergies}
-              onChange={updateField}
-              placeholder="List any known drug allergies"
-            />
-          </label>
-        </div>
-
-        <fieldset className="rx-fieldset">
-          <legend>Request type *</legend>
-          <div className="rx-radio-group">
-            <label className="rx-radio">
-              <input
-                type="radio"
-                name="prescriptionType"
-                value="refill"
-                checked={form.prescriptionType === 'refill'}
-                onChange={updateField}
-              />
-              Refill
-            </label>
-            <label className="rx-radio">
-              <input
-                type="radio"
-                name="prescriptionType"
-                value="new"
-                checked={form.prescriptionType === 'new'}
-                onChange={updateField}
-              />
-              New prescription
-            </label>
-            <label className="rx-radio">
-              <input
-                type="radio"
-                name="prescriptionType"
-                value="transfer"
-                checked={form.prescriptionType === 'transfer'}
-                onChange={updateField}
-              />
-              Transfer from another pharmacy
-            </label>
-          </div>
-        </fieldset>
-
-        <fieldset className="rx-fieldset">
-          <legend>Pickup or delivery *</legend>
-          <div className="rx-radio-group">
-            <label className="rx-radio">
-              <input
-                type="radio"
-                name="fulfillment"
-                value="pickup"
-                checked={form.fulfillment === 'pickup'}
-                onChange={updateField}
-              />
-              Pickup in store
-            </label>
-            <label className="rx-radio">
-              <input
-                type="radio"
-                name="fulfillment"
-                value="delivery"
-                checked={form.fulfillment === 'delivery'}
-                onChange={updateField}
-              />
-              Local delivery
-            </label>
-          </div>
-        </fieldset>
-
-        <label className="rx-field rx-field--full">
-          <span>Additional notes</span>
-          <textarea
-            name="notes"
-            value={form.notes}
-            onChange={updateField}
-            rows={4}
-            placeholder="Preferred pickup time, questions for the pharmacist, etc."
-          />
-        </label>
       </div>
 
       {errorMessage && (
@@ -372,12 +198,11 @@ function PrescriptionUploadForm() {
         className="btn btn-primary rx-submit-btn"
         disabled={status === 'submitting'}
       >
-        {status === 'submitting' ? 'Sending to pharmacy…' : 'Submit prescription'}
+        {status === 'submitting' ? 'Sending to pharmacy…' : 'Send to pharmacy'}
       </button>
 
       <p className="rx-form-disclaimer">
-        Your information is sent securely to Family Care Pharmacy. For urgent requests,
-        please call us directly.
+        Prefer to talk it through? Call us and we will fill your prescription right away.
       </p>
     </form>
   )

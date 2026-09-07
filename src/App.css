@@ -1634,18 +1634,26 @@ body {
 .service-list {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: clamp(3.25rem, 6vw, 5rem);
+}
+
+.services-featured-heading {
+  margin-bottom: 2.25rem;
 }
 
 .service-row {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(1.75rem, 4vw, 3.25rem);
   align-items: center;
   scroll-margin-top: calc(var(--header-height) + 1rem);
 }
 
-.service-row.reversed .service-image {
+.service-row.reversed {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+.service-row.reversed .service-media {
   order: 2;
 }
 
@@ -1653,18 +1661,65 @@ body {
   order: 1;
 }
 
+.service-media {
+  overflow: hidden;
+  border-radius: 1.5rem;
+  background: var(--bg-cream-deep);
+  line-height: 0;
+}
+
+.service-row:not(.reversed) .service-media {
+  border-radius: 1.5rem 0.35rem 1.5rem 0.35rem;
+}
+
+.service-row.reversed .service-media {
+  border-radius: 0.35rem 1.5rem 0.35rem 1.5rem;
+}
+
 .service-image {
   width: 100%;
   aspect-ratio: 5 / 4;
   object-fit: cover;
-  border-radius: var(--radius);
+  object-position: center;
   display: block;
 }
 
+.service-copy {
+  max-width: 28rem;
+}
+
 .service-title {
-  margin: 0 0 0.75rem;
-  font-size: 1.15rem;
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.2rem, 2.4vw, 1.45rem);
   font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.service-points {
+  margin: 1.15rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.service-points li {
+  position: relative;
+  padding: 0.35rem 0 0.35rem 1.15rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.service-points li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.75rem;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0.7;
 }
 
 .services-cta-actions {
@@ -1945,15 +2000,26 @@ body {
   .values-grid,
   .split-layout,
   .gallery-grid,
+  .contact-page-layout,
   .service-row,
-  .contact-page-layout {
+  .service-row.reversed {
     grid-template-columns: 1fr;
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
 
-  .service-row.reversed .service-image,
+  .service-row.reversed .service-media,
   .service-row.reversed .service-copy {
     order: unset;
+  }
+
+  .service-media,
+  .service-row:not(.reversed) .service-media,
+  .service-row.reversed .service-media {
+    border-radius: 1.25rem;
+  }
+
+  .service-copy {
+    max-width: none;
   }
 
   .rx-form-grid {

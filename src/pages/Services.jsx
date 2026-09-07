@@ -1,67 +1,87 @@
 import { Link } from 'react-router-dom'
 import PageHero from '../components/PageHero'
-import { PHONE_DISPLAY, PHONE_TEL } from '../constants/contact'
+import { ADDRESS_FULL, PHONE_DISPLAY, PHONE_TEL } from '../constants/contact'
 
 const featuredServices = [
   {
     id: 'free-delivery',
     title: 'Free delivery',
-    text: 'We deliver prescriptions to your door at no extra charge within our local service area. Ideal if you are recovering at home, caring for family, or simply prefer not to make another trip — call us or ask at the counter to set up delivery.',
-    image: 'https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=900&q=80',
-    alt: 'Prescription delivery to your home',
+    text: 'We deliver prescriptions across Langley and nearby neighbourhoods at no extra charge. Ideal when you are home recovering, juggling family, or simply want one less errand.',
+    points: [
+      'No delivery fee within our local zone',
+      'Same-day drops when we can',
+      'Call or ask at the counter to set it up',
+    ],
+    image: '/images/band-visit.jpg',
+    alt: 'Family Care Pharmacy neighbourhood location in Langley',
   },
   {
     id: 'compounding',
     title: 'Compounding',
-    text: 'When an off-the-shelf product is not the right fit, our compounding pharmacists prepare custom medications — adjusted strengths, flavours, or dosage forms for children, pets, and patients with unique needs.',
-    image: 'https://images.unsplash.com/photo-1585435557343-3b5930310d87?auto=format&fit=crop&w=900&q=80',
-    alt: 'Custom compounded medication preparation',
+    text: 'When a standard product is not quite right, our pharmacists prepare custom medications — flavours kids will take, adjusted strengths, and dosage forms that fit your needs.',
+    points: [
+      'Custom strengths and flavours',
+      'Liquids, creams, and specialty forms',
+      'Options for patients and pets',
+    ],
+    image: 'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Pharmacist preparing custom compounded medication',
   },
   {
     id: 'pharmacist-prescribing',
     title: 'Pharmacist prescribing',
-    text: 'Our licensed pharmacists can assess and prescribe for many common conditions — UTIs, allergies, birth control renewals, and more — so you get timely care without always needing a separate doctor visit.',
-    image: 'https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=900&q=80',
-    alt: 'Pharmacist consultation and prescribing',
+    text: 'Licensed pharmacists can assess and prescribe for many common conditions — so you get timely care without always booking a separate doctor visit.',
+    points: [
+      'UTIs, allergies, and cold sores',
+      'Birth control renewals',
+      'Walk-in assessments most days',
+    ],
+    image: '/images/band-about.jpg',
+    alt: 'Inside Family Care Pharmacy wellness and care section',
   },
   {
     id: 'compliance-packing',
     title: 'Compliance packing',
-    text: 'Stay on track with bubble packs and blister packs organized by date and time of day. We prepare your medications in easy-to-follow packs — especially helpful for seniors, caregivers, and anyone on multiple prescriptions.',
-    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=900&q=80',
-    alt: 'Organized compliance medication packs',
+    text: 'Bubble packs and blister packs organised by date and time of day — so the right dose is ready when you need it. Especially helpful for seniors, caregivers, and anyone on multiple medications.',
+    points: [
+      'Morning, noon, and evening labels',
+      'Easy for caregivers to check',
+      'Synced with your refill schedule',
+    ],
+    image: 'https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Organized medication blister packs for daily doses',
   },
 ]
 
 const additionalServices = [
   {
     title: 'Prescription dispensing',
-    text: 'Fast, accurate filling with insurance billing, generic substitutions when appropriate, and refill reminders so you never run out.',
-    image: 'https://images.unsplash.com/photo-1631549916768-4119b2d5f2c6?auto=format&fit=crop&w=900&q=80',
-    alt: 'Pharmacy prescription counter',
+    text: 'Accurate filling with insurance billing, generic options when appropriate, and refill reminders so you do not run out.',
+    image: '/images/band-services.jpg',
+    alt: 'Prescription counter inside Family Care Pharmacy',
   },
   {
     title: 'Immunizations',
-    text: 'Walk-in flu shots and routine vaccines for adults and children. Our pharmacists are certified immunizers.',
-    image: 'https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=900&q=80',
-    alt: 'Pharmacy immunization service',
+    text: 'Walk-in flu shots and routine vaccines for adults and children. Our pharmacists are certified immunizers — bring your health card and we will take care of the rest.',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Pharmacist providing immunization care',
   },
   {
     title: 'Medication reviews',
-    text: 'Comprehensive reviews to check for interactions, duplications, and ways to simplify your daily regimen.',
-    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=80',
-    alt: 'Pharmacist medication review',
+    text: 'Sit down with a pharmacist to review interactions, simplify your regimen, and make sure every medication still earns its place.',
+    image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Pharmacist reviewing medications with a patient',
   },
 ]
 
 const faqs = [
   {
     q: 'How do I set up free delivery?',
-    a: 'Call us or visit in person with your prescription details. We confirm your address is in our delivery zone and schedule your first drop-off.',
+    a: `Call us at ${PHONE_DISPLAY} or visit in person. We confirm your address is in our Langley delivery zone and schedule your first drop-off.`,
   },
   {
     q: 'What is compliance packing?',
-    a: 'We organize your medications into dated blister or bubble packs labelled by morning, afternoon, and evening — so you take the right pills at the right time.',
+    a: 'We organise your medications into dated blister or bubble packs labelled by morning, afternoon, and evening — so you take the right pills at the right time.',
   },
   {
     q: 'Can a pharmacist prescribe for me?',
@@ -78,20 +98,20 @@ function Services() {
     <>
       <PageHero
         label="Services"
-        title="How we can help"
-        subtitle="Full-service pharmacy care for every stage of life."
-        image="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1920&q=85"
+        title="Care that fits real life"
+        subtitle={`Independent pharmacy services for families in ${ADDRESS_FULL} — from the counter to your door.`}
+        image="/images/band-services.jpg"
       />
 
       <section className="page-content">
         <div className="section-inner">
           <p className="page-lead centered">
-            From free delivery to custom compounding, our pharmacists provide clinical
-            expertise with the convenience of a neighbourhood store.
+            Free delivery, custom compounding, pharmacist prescribing, and compliance packing —
+            practical care from a neighbourhood pharmacy that knows your name.
           </p>
 
           <span className="section-label">Core services</span>
-          <h2 className="section-title">What we offer</h2>
+          <h2 className="section-title services-featured-heading">What we offer</h2>
 
           <div className="service-list">
             {featuredServices.map((service, index) => (
@@ -100,15 +120,22 @@ function Services() {
                 id={service.id}
                 className={`service-row ${index % 2 === 1 ? 'reversed' : ''}`}
               >
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  className="service-image"
-                  loading="lazy"
-                />
+                <div className="service-media">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    className="service-image"
+                    loading="lazy"
+                  />
+                </div>
                 <div className="service-copy">
                   <h3 className="service-title">{service.title}</h3>
                   <p className="prose">{service.text}</p>
+                  <ul className="service-points">
+                    {service.points.map((point) => (
+                      <li key={point}>{point}</li>
+                    ))}
+                  </ul>
                 </div>
               </article>
             ))}
@@ -119,7 +146,7 @@ function Services() {
       <section className="page-content subtle">
         <div className="section-inner">
           <span className="section-label">Also available</span>
-          <h2 className="section-title">More ways we help</h2>
+          <h2 className="section-title services-featured-heading">More ways we help</h2>
 
           <div className="service-list">
             {additionalServices.map((service, index) => (
@@ -127,12 +154,14 @@ function Services() {
                 key={service.title}
                 className={`service-row ${index % 2 === 1 ? 'reversed' : ''}`}
               >
-                <img
-                  src={service.image}
-                  alt={service.alt}
-                  className="service-image"
-                  loading="lazy"
-                />
+                <div className="service-media">
+                  <img
+                    src={service.image}
+                    alt={service.alt}
+                    className="service-image"
+                    loading="lazy"
+                  />
+                </div>
                 <div className="service-copy">
                   <h3 className="service-title">{service.title}</h3>
                   <p className="prose">{service.text}</p>
@@ -160,12 +189,12 @@ function Services() {
 
       <section className="page-cta">
         <div className="section-inner page-cta-inner">
-          <h2 className="section-title">Ready to get started?</h2>
+          <h2 className="section-title">Ready when you are</h2>
           <p className="section-lead">
-            Set up delivery, ask about compliance packing, or speak with a pharmacist today.
+            Call for delivery, ask about packing, or send a refill photo — we will take it from there.
           </p>
           <div className="services-cta-actions">
-            <Link to="/prescriptions" className="btn btn-primary">Request prescription refills</Link>
+            <Link to="/prescriptions" className="btn btn-primary">Fill my prescriptions</Link>
             <a href={`tel:${PHONE_TEL}`} className="btn btn-secondary">{PHONE_DISPLAY}</a>
           </div>
         </div>

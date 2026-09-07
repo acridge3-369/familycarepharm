@@ -6,9 +6,9 @@ function RefillPrescription() {
   return (
     <>
       <PageHero
-        label="Prescriptions"
-        title="Submit your prescription"
-        subtitle="Take a photo on your phone and send it to our pharmacy with your details."
+        label="Fill my prescriptions"
+        title="Fill my prescriptions"
+        subtitle="Send a photo of your prescription, or call us and we will get it filled right away."
         image="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1920&q=85"
       />
 
