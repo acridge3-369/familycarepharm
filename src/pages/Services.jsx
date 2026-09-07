@@ -12,8 +12,8 @@ const featuredServices = [
       'Same-day drops when we can',
       'Call or ask at the counter to set it up',
     ],
-    image: '/images/band-visit.jpg',
-    alt: 'Family Care Pharmacy neighbourhood location in Langley',
+    image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Home delivery package ready for drop-off',
   },
   {
     id: 'compounding',
@@ -36,8 +36,8 @@ const featuredServices = [
       'Birth control renewals',
       'Walk-in assessments most days',
     ],
-    image: '/images/band-about.jpg',
-    alt: 'Inside Family Care Pharmacy wellness and care section',
+    image: 'https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Pharmacist consulting with a patient about a prescription',
   },
   {
     id: 'compliance-packing',
@@ -48,8 +48,8 @@ const featuredServices = [
       'Easy for caregivers to check',
       'Synced with your refill schedule',
     ],
-    image: 'https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Organized medication blister packs for daily doses',
+    image: 'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Organized daily medication blister packs',
   },
 ]
 
@@ -57,14 +57,14 @@ const additionalServices = [
   {
     title: 'Prescription dispensing',
     text: 'Accurate filling with insurance billing, generic options when appropriate, and refill reminders so you do not run out.',
-    image: '/images/band-services.jpg',
-    alt: 'Prescription counter inside Family Care Pharmacy',
+    image: 'https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=1200&q=80',
+    alt: 'Prescription medications ready for dispensing',
   },
   {
     title: 'Immunizations',
     text: 'Walk-in flu shots and routine vaccines for adults and children. Our pharmacists are certified immunizers — bring your health card and we will take care of the rest.',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Pharmacist providing immunization care',
+    alt: 'Healthcare professional preparing an immunization',
   },
   {
     title: 'Medication reviews',
@@ -100,7 +100,7 @@ function Services() {
         label="Services"
         title="Care that fits real life"
         subtitle={`Independent pharmacy services for families in ${ADDRESS_FULL} — from the counter to your door.`}
-        image="/images/band-services.jpg"
+        image="https://images.unsplash.com/photo-1585435557343-3b5930310d87?auto=format&fit=crop&w=1920&q=85"
       />
 
       <section className="page-content">

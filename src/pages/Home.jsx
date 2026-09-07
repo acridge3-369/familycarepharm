@@ -9,6 +9,14 @@ import {
 
 const highlights = [
   {
+    to: '/about',
+    label: 'About us',
+    title: 'A pharmacy built on trust',
+    text: 'Family-owned and community-focused for over 25 years. We know your name, your medications, and what matters to your health.',
+    image: '/images/band-about.jpg',
+    alt: 'Family Care Pharmacy team and storefront',
+  },
+  {
     to: '/services',
     label: 'Services',
     title: 'Care beyond the counter',
@@ -41,7 +49,7 @@ function Home() {
             Personal pharmacy care for your whole family.
           </p>
           <div className="hero-actions">
-            <Link to="/prescriptions" className="btn btn-primary">Fill my prescriptions</Link>
+            <Link to="/prescriptions" className="btn btn-primary">Prescriptions</Link>
             <a href={`tel:${PHONE_TEL}`} className="btn btn-secondary">{PHONE_DISPLAY}</a>
           </div>
         </div>
