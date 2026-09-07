@@ -40,15 +40,6 @@ function Header() {
           <NavLink to="/prescriptions" className={refillsClass} onClick={closeMenu}>
             Fill my prescriptions
           </NavLink>
-          <NavLink
-            to="/transfer-prescriptions"
-            className={({ isActive }) =>
-              isActive ? 'header-transfer-link active' : 'header-transfer-link'
-            }
-            onClick={closeMenu}
-          >
-            Transfer prescriptions
-          </NavLink>
         </div>
 
         <button
@@ -72,17 +63,6 @@ function Header() {
             onClick={closeMenu}
           >
             Fill my prescriptions
-          </NavLink>
-          <NavLink
-            to="/transfer-prescriptions"
-            className={({ isActive }) =>
-              isActive
-                ? 'header-transfer-link header-transfer-link--menu active'
-                : 'header-transfer-link header-transfer-link--menu'
-            }
-            onClick={closeMenu}
-          >
-            Transfer prescriptions
           </NavLink>
           <div className="nav-links">
             <NavLink

@@ -9,7 +9,6 @@ import Services from './pages/Services'
 import Contact from './pages/Contact'
 import RefillPrescription from './pages/RefillPrescription'
 import Walkthrough from './pages/Walkthrough'
-import TransferPrescriptions from './pages/TransferPrescriptions'
 import './App.css'
 
 createRoot(document.getElementById('root')).render(
@@ -25,7 +24,6 @@ createRoot(document.getElementById('root')).render(
           <Route path="/contact" element={<Contact />} />
           <Route path="/prescriptions" element={<RefillPrescription />} />
           <Route path="/refill-prescription" element={<RefillPrescription />} />
-          <Route path="/transfer-prescriptions" element={<TransferPrescriptions />} />
         </Route>
       </Routes>
     </BrowserRouter>

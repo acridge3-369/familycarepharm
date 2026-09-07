@@ -1,5 +1,4 @@
 import PageHero from '../components/PageHero'
-import { Link } from 'react-router-dom'
 import {
   ADDRESS_CITY,
   ADDRESS_FULL,
@@ -127,9 +126,6 @@ function Contact() {
               New to the area? Visit us at {ADDRESS_FULL}, or bring your empty bottles or a
               photo of your prescription label and we will take care of the rest.
             </p>
-            <Link to="/transfer-prescriptions" className="home-flow-link">
-              Learn more about transferring <span aria-hidden="true">→</span>
-            </Link>
           </div>
         </div>
       </section>

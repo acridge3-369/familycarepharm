@@ -88,6 +88,15 @@ function Home() {
           </article>
         ))}
 
+        <aside className="home-values-banner">
+          <p className="home-values-kicker">Welcome to Family Care</p>
+          <h2 className="home-values-slogan">Care for every family.</h2>
+          <p className="home-values-text">
+            We value your time. Thank you for sticking with your local pharmacy —
+            one that cares about each individual customer.
+          </p>
+        </aside>
+
         <article className="home-location">
           <div className="home-location-card">
             <div className="home-location-copy">
