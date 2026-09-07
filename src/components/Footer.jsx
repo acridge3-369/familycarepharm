@@ -9,7 +9,6 @@ function Footer() {
           <Link to="/prescriptions" className="footer-nav-refills">Request prescription refills</Link>
           <Link to="/services">Services</Link>
           <Link to="/walkthrough">Walkthrough</Link>
-          <Link to="/about">About</Link>
           <Link to="/contact">Contact</Link>
         </nav>
         <p className="footer-copy">&copy; {new Date().getFullYear()} Family Care Pharmacy</p>

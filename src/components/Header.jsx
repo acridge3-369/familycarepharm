@@ -5,7 +5,6 @@ import { serviceMenuLinks } from '../constants/services'
 
 const navLinks = [
   { to: '/', label: 'Home', end: true },
-  { to: '/about', label: 'About' },
   { to: '/contact', label: 'Contact' },
 ]
 
