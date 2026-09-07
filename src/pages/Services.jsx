@@ -12,8 +12,8 @@ const featuredServices = [
       'Same-day drops when we can',
       'Call or ask at the counter to set it up',
     ],
-    image: 'https://images.unsplash.com/photo-1605745341112-85968b19335b?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Home delivery package ready for drop-off',
+    image: '/images/pharmacy-delivery-car.png',
+    alt: 'Local pharmacy delivery car for prescription drop-offs',
   },
   {
     id: 'compounding',
@@ -57,7 +57,7 @@ const additionalServices = [
   {
     title: 'Prescription dispensing',
     text: 'Accurate filling with insurance billing, generic options when appropriate, and refill reminders so you do not run out.',
-    image: 'https://images.unsplash.com/photo-1587854692152-c3d09bf27c7a?auto=format&fit=crop&w=1200&q=80',
+    image: 'https://images.unsplash.com/photo-1505751172876-fa1923c5c528?auto=format&fit=crop&w=1200&q=80',
     alt: 'Prescription medications ready for dispensing',
   },
   {
@@ -100,7 +100,7 @@ function Services() {
         label="Services"
         title="Care that fits real life"
         subtitle={`Independent pharmacy services for families in ${ADDRESS_FULL} — from the counter to your door.`}
-        image="https://images.unsplash.com/photo-1585435557343-3b5930310d87?auto=format&fit=crop&w=1920&q=85"
+        image="https://images.unsplash.com/photo-1576602976047-174e57a47881?auto=format&fit=crop&w=1920&q=85"
       />
 
       <section className="page-content">
@@ -191,7 +191,7 @@ function Services() {
         <div className="section-inner page-cta-inner">
           <h2 className="section-title">Ready when you are</h2>
           <p className="section-lead">
-            Call for delivery, ask about packing, or send a refill photo — we will take it from there.
+            Call for delivery, ask about packing, or speak with a pharmacist — we will take it from there.
           </p>
           <div className="services-cta-actions">
             <Link to="/prescriptions" className="btn btn-primary">Fill my prescriptions</Link>

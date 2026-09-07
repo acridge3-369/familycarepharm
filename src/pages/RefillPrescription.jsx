@@ -1,5 +1,4 @@
 import PageHero from '../components/PageHero'
-import PrescriptionUploadForm from '../components/PrescriptionUploadForm'
 import { PHONE_DISPLAY, PHONE_TEL } from '../constants/contact'
 
 function RefillPrescription() {
@@ -8,13 +7,13 @@ function RefillPrescription() {
       <PageHero
         label="Fill my prescriptions"
         title="Fill my prescriptions"
-        subtitle="Send a photo of your prescription, or call us and we will get it filled right away."
+        subtitle="Call us and we will get your prescription filled right away — no long waits."
         image="https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1920&q=85"
       />
 
       <section className="page-content subtle">
         <div className="section-inner refill-call-card refill-call-card--inline">
-          <span className="section-label">Prefer to call?</span>
+          <span className="section-label">Call the pharmacy</span>
           <h2 className="section-title">Give us a call</h2>
           <p className="prose">
             Call the pharmacy and we will get your prescription filled right away —
@@ -23,12 +22,6 @@ function RefillPrescription() {
           <a href={`tel:${PHONE_TEL}`} className="refill-phone-link">
             {PHONE_DISPLAY}
           </a>
-        </div>
-      </section>
-
-      <section className="page-content">
-        <div className="section-inner rx-page-inner">
-          <PrescriptionUploadForm />
         </div>
       </section>
     </>
