@@ -4,7 +4,7 @@ export const AFTER_HOURS_PHONE_TEL = '+16048331641'
 export const AFTER_HOURS_PHONE_DISPLAY = '(604) 833-1641'
 export const PHARMACY_EMAIL = 'gcridge3@gmail.com'
 
-export const ADDRESS_LINE1 = '20020 84 Ave'
+export const ADDRESS_LINE1 = '5101 84 Ave'
 export const ADDRESS_CITY = 'Langley, BC'
 export const ADDRESS_FULL = `${ADDRESS_LINE1}, ${ADDRESS_CITY}`
 

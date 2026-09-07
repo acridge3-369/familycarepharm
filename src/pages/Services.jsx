@@ -6,9 +6,9 @@ const featuredServices = [
   {
     id: 'free-delivery',
     title: 'Free delivery',
-    text: 'We deliver prescriptions across Langley and nearby neighbourhoods at no extra charge. Ideal when you are home recovering, juggling family, or simply want one less errand.',
+    text: 'We deliver prescriptions at no extra charge across our service area. Ideal when you are home recovering, juggling family, or simply want one less errand.',
     points: [
-      'No delivery fee within our local zone',
+      'Free delivery — ask us about your address',
       'Same-day drops when we can',
       'Call or ask at the counter to set it up',
     ],
@@ -77,7 +77,7 @@ const additionalServices = [
 const faqs = [
   {
     q: 'How do I set up free delivery?',
-    a: `Call us at ${PHONE_DISPLAY} or visit in person. We confirm your address is in our Langley delivery zone and schedule your first drop-off.`,
+    a: `Call us at ${PHONE_DISPLAY} or visit in person. Tell us your address and we will confirm delivery and schedule your first drop-off.`,
   },
   {
     q: 'What is compliance packing?',
@@ -89,7 +89,7 @@ const faqs = [
   },
   {
     q: 'Is delivery really free?',
-    a: 'Yes, for addresses within our local delivery zone. Ask our team to confirm your address qualifies.',
+    a: 'Yes. Call or ask at the counter with your address and we will confirm delivery for you.',
   },
 ]
 
