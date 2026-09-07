@@ -2188,11 +2188,20 @@ button {
     min-height: 48px;
   }
 
-  .nav-dropdown-menu {
+  .nav-dropdown {
+    width: 100%;
+  }
+
+  .nav-dropdown-menu,
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
     position: static;
+    left: auto;
+    top: auto;
     min-width: 0;
-    margin: 0.15rem 0 0.35rem 0.75rem;
-    padding: 0.25rem 0 0.5rem;
+    width: 100%;
+    margin: 0.15rem 0 0.35rem 0;
+    padding: 0.15rem 0 0.35rem 0.85rem;
     border: none;
     border-left: 2px solid var(--border);
     border-radius: 0;
@@ -2204,10 +2213,15 @@ button {
     transform: none;
   }
 
+  .nav-dropdown-menu::before {
+    display: none;
+  }
+
   .nav-dropdown-item {
     padding: 0.7rem 0.85rem;
     font-size: 1rem;
     min-height: 44px;
+    white-space: normal;
   }
 
   .header-phone {
