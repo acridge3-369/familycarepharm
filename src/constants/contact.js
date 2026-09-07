@@ -7,8 +7,9 @@ export const PHARMACY_EMAIL = 'gcridge3@gmail.com'
 export const ADDRESS_LINE1 = '20020 84 Ave B-105'
 export const ADDRESS_CITY = 'Langley Twp, BC V2Y 5K9'
 export const ADDRESS_FULL = `${ADDRESS_LINE1}, ${ADDRESS_CITY}`
+export const BUSINESS_NAME = 'Family Care Pharmacy'
 
-const MAP_QUERY = encodeURIComponent(ADDRESS_FULL)
+const MAP_QUERY = encodeURIComponent(`${BUSINESS_NAME}, ${ADDRESS_FULL}`)
 
 export const MAP_EMBED_URL = `https://maps.google.com/maps?q=${MAP_QUERY}&hl=en&z=16&output=embed`
 export const MAP_LINK = `https://www.google.com/maps/search/?api=1&query=${MAP_QUERY}`

@@ -7,6 +7,7 @@ function Footer() {
         <p className="footer-brand">Family Care Pharmacy</p>
         <nav className="footer-nav">
           <Link to="/prescriptions" className="footer-nav-refills">Fill my prescriptions</Link>
+          <Link to="/transfer-prescriptions">Transfer prescriptions</Link>
           <Link to="/services">Services</Link>
           <Link to="/walkthrough">Walkthrough</Link>
           <Link to="/contact">Contact</Link>

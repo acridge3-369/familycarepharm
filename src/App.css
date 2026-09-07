@@ -147,6 +147,26 @@ body {
   display: none;
 }
 
+.header-transfer-link {
+  color: var(--text);
+  text-decoration: none;
+  font-size: clamp(0.82rem, 1.2vw, 0.92rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  padding: 0.35rem 0;
+  transition: color 0.15s;
+}
+
+.header-transfer-link:hover,
+.header-transfer-link.active {
+  color: var(--accent);
+}
+
+.header-transfer-link--menu {
+  display: none;
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -1751,6 +1771,30 @@ body {
   border-color: var(--text-muted);
 }
 
+.transfer-intro {
+  padding-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-bottom: clamp(1.5rem, 3vw, 2rem);
+}
+
+.transfer-intro .page-lead {
+  margin-bottom: 0;
+}
+
+.transfer-steps {
+  margin-top: 2rem;
+}
+
+.transfer-step-num {
+  display: block;
+  margin-bottom: 0.65rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  line-height: 1;
+  color: var(--text);
+  opacity: 0.18;
+}
+
 /* Page CTA */
 .page-cta {
   background: var(--accent-soft);
@@ -2102,7 +2146,8 @@ body {
     padding: 0.65rem 0;
   }
 
-  .header-start .header-refills-btn {
+  .header-start .header-refills-btn,
+  .header-start .header-transfer-link {
     display: none;
   }
 
@@ -2114,6 +2159,12 @@ body {
     text-align: center;
     padding: 0.95rem 1.25rem;
     font-size: 1.05rem;
+  }
+
+  .header-transfer-link--menu {
+    display: block;
+    font-size: 1.05rem;
+    padding: 0.65rem 0;
   }
 
   .nav-dropdown-menu {
